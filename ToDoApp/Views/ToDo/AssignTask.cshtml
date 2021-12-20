@@ -1,0 +1,43 @@
+﻿@model EmployeeTaskViewModel
+<h2>Task Assignment Form</h2>
+<form method="post">
+    <p>Select an Employee</p>
+    <select name="employeeId">
+        @foreach (Employee e in Model.Employees)
+        {
+<option value="@e.Id">@e.Name</option>
+}
+    </select>
+
+    <br />
+    <p>Select a Task to assign the Employee</p>
+
+    <select name="toDoId">
+        @foreach (ToDo t in Model.ToDos)
+        {
+<option value="@t.Id">@t.Name</option>
+}
+    </select>
+
+
+    @*@if (@t.IsCompleted == true)
+    {
+<p>Yes</p> }
+            else
+            {
+<p>No</p>}*@
+
+
+
+
+    @*<div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
+            </label>
+        </div>*@
+
+
+
+
+    <input type="submit" />
+</form>

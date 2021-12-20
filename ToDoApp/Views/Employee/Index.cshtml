@@ -1,0 +1,27 @@
+﻿@model EmployeeTaskViewModel
+
+<h2>---Employees---</h2>
+@foreach (Employee e in Model.Employees)
+{
+<p>@e.Name</p>
+<p>@e.Title</p> //<a asp-action="Delete" asp-controller="Employee" asp-route-id="@e.Id"> <button>Remove From Employee </button> </a>
+
+ //<button type="button" asp-action="Delete" asp-controller="Employee" asp-route-id="@e.Id">Delete Employee</button>
+
+
+
+<a asp-action="Delete" asp-controller="Employee" asp-route-id="@e.Id"><p>Delete this entry</p></a>}
+
+<a asp-action="Update" asp-controller="Employee" asp-route-id="e.Id"><p>Update</p></a>
+
+
+<p>-----------------------------</p>
+<h2>Tasks</h2>
+@foreach (ToDo t in Model.ToDos)
+{
+<p>@t.Name</p>}
+
+
+
+
+
